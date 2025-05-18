@@ -1,0 +1,20 @@
+services:
+  aisdispatcher:
+    build:
+      context: ./aisdispatcher
+      dockerfile: Dockerfile
+    image: aisdispatcher:latest
+    container_name: aisdispatcher
+    privileged: true
+    network_mode: host
+    restart: always
+
+  aiscot:
+    build:
+      context: ./aiscot
+      dockerfile: Dockerfile
+    image: aiscot:latest
+    container_name: aiscot
+    privileged: true
+    network_mode: host
+    restart: always
