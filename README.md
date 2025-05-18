@@ -54,6 +54,8 @@ The [aiscot documentation](https://aiscot.readthedocs.io/en/latest/configuration
 
 ### aisdispatcher
 
+**NOTE:** This container does not start/use the new web interface - yet?
+
 * aisdispatcher/Dockerfile
 
     This block is located in the Stage 2 section, near the bottom of the file. It must be left there to be loaded in the right environment for substitution.
