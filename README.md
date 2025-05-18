@@ -2,6 +2,10 @@
 
 Containers to receive AIS messages and retransmit them as Cursor on Target (CoT) messages for TAK applications and more.
 
+## Credit
+
+Thanks to [cemaxecuter](https://www.youtube.com/watch?v=4GV5yzhEG-E) for showcasing what TAK applications can do for hobbyists!
+
 ## Disclaimer/Contribute
 
 I am new to Docker and heavily used AI to create this project. If you see mistakes or ways to improve this project, feel free to submit a PR!
