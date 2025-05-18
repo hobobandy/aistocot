@@ -23,10 +23,12 @@ sudo apt install docker.io docker-compose
 
 ## Installation
 
-1. Download/clone this repo.
-2. From the root folder, run `docker-compose up -d` (initial run will build the images, requires Internet access)
-3. If your AIS receiver source isn't running yet, you may start it now.
-4. Check your TAK application, vessels should start appearing right away. If not, check your Network Inputs and/or configuration below.
+1. Download/clone this repo, customize configuration as described below.
+   * If using [Dockge](https://github.com/louislam/dockge), clone to your stacks direction (default: `/opt/stacks`).
+2. Remember to allow configured ports through your firewall if needed.
+3. From the root folder, run `docker-compose up -d` (initial run will build the images, requires Internet access)
+4. If your AIS receiver source isn't running yet, you may start it now.
+5. Check your TAK application, vessels should start appearing right away. If not, check your Network Inputs and/or configuration below.
 
 ## Configuration
 
