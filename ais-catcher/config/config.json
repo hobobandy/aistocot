@@ -1,0 +1,23 @@
+{
+    "config": "aiscatcher",
+    "version": 1,
+    "sharing": false,
+    "verbose": false,
+    "screen": 0,
+    "input": "rtlsdr",
+    "rtlsdr": {
+            "active": true,
+            "rtlagc": true,
+            "tuner": "auto",
+            "bandwidth": "192K",
+            "sample_rate": "1536K",
+            "biastee": false
+    },
+    "udp": [
+        {
+            "active": true,
+            "host": "127.0.0.1",
+            "port": 2233
+        }
+    ]
+}

@@ -12,10 +12,12 @@ I am new to Docker and heavily used AI to create this project. If you see mistak
 
 ## Dataflow
 
-1. ais-dispatcher - NMEA AIS messages are received from a source (serial, udp, etc.)
-2. ais-dispatcher - Messages are parsed, downsampled as configured, retransmitted to destinations (aiscot)
-3. aiscot - NMEA AIS messages are received, parsed, converted to CoT messages
-4. aiscot - CoT messages are transmitted to destination (TAK network input address)
+1. ais-catcher - Start receivers to feed NMEA AIS messages to aisdispatcher
+   * This container is enabled by default, but can be disabled if NMEA AIS messages are received over network.
+2. aisdispatcher - NMEA AIS messages are received from a source (serial, udp, etc.)
+3. aisdispatcher - Messages are parsed, downsampled as configured, retransmitted to destinations (aiscot)
+4. aiscot - NMEA AIS messages are received, parsed, converted to CoT messages
+5. aiscot - CoT messages are transmitted to destination (TAK network input address)
 
 ## Requirements
 
@@ -103,3 +105,16 @@ The [aiscot documentation](https://aiscot.readthedocs.io/en/latest/configuration
     -s "aisdispatcher" \
     -w "${WAIT}"
     ```
+
+### ais-catcher
+
+To disable this container, comment its section in the `docker-compose.yml` file.
+
+**NOTE:** This container does not start/use the web interface by default, but the default port (8100) is open if needed.
+
+* CLI switches are configured in the `docker-compose.yml` file under `command:`
+  * For example, to enable the web interface, you'd add `-N 8100` after the default `-C /config/config.json`.
+
+* ais-catcher/config/config.json
+
+  Basic default config file to feed aisdispatcher using an RTL-SDR, see [ais-catcher's documentation](https://docs.aiscatcher.org/configuration/overview/) for more options.

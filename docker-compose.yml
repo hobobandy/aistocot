@@ -1,4 +1,16 @@
 services:
+  ais-catcher:
+    command: -C /config/config.json
+    container_name: ais-catcher
+    ports:
+      - 8100:8100
+    devices:
+      - "/dev/bus/usb:/dev/bus/usb"
+    volumes:
+      - ./ais-catcher/config:/config
+    image: ghcr.io/jvde-github/ais-catcher:latest
+    restart: always
+
   aisdispatcher:
     build:
       context: ./aisdispatcher
